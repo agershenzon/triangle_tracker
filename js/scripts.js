@@ -1,6 +1,7 @@
 function triangleTracker(side1, side2, side3){
+
   // if value 0 or less alert to enter in value larger than 0
-  if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+  if ((side1 <= 0 )|| (isNaN(side1))|| (side2 <= 0) || (isNaN(side2)) || (side3 <= 0) || (isNaN(side3))) {
     return "not valid, please enter in a value larger than 0";
   } else if ((side1 + side2 <= side3) || (side2 + side3 < side1) || (side3 + side1 < side2)) {
     return "non-triangle - please enter in different values!";
