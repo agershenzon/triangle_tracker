@@ -1,19 +1,26 @@
 function triangleTracker(side1, side2, side3){
-
-  if ((side1 + side2 <= side3) ||(side2 + side3 < side1) || (side3 + side1 < side2)) {
-    alert('not a triangle');
-    return true;
-  } else if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+  // if value 0 or less alert to enter in value larger than 0
+  if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+    $("#results").hide();
     alert('Enter in a value larger than 0');
     return true;
+  }
+  
+  if ((side1 + side2 <= side3) ||(side2 + side3 < side1) || (side3 + side1 < side2)) {
+    $("#results").hide();
+    alert('not a triangle, try again.');
+    return true;
   } else if (side1 === side2 && side2 ===side3) {
-    alert('equilateral');
+    $("#results").show();
+    $("#triangle").text("Equilateral");
     return true;
   } else if ((side1 === side2)||(side2 === side3)||(side3 === side1)) {
-    alert('isoceles');
+    $("#results").show();
+    $("#triangle").text("Isoceles");
     return true;
   } else if ((side1 !== side2)&&(side2 !== side3)&&(side3 !== side1)) {
-    alert('scalene');
+    $("#results").show();
+    $("#triangle").text("Scalene");
     return true;
   }
 }

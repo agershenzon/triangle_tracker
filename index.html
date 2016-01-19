@@ -8,26 +8,29 @@
     <title>Traingle Tracker</title>
   </head>
   <body>
-    <h1>Trangle Tracker</h1>
-      <form id="triangle-tracker">
-        <div class="form-group">
-          <label for="side1"></label>
-          <input type="text" name="side1" id="side1" placeholder="side 1 here">
-        </div>
-        <div class="form-group">
-          <label for="side2"></label>
-          <input type="text" name="side2" id="side2" placeholder="side 2 here">
-        </div>
-        <div class="form-group">
-          <label for="side3"></label>
-          <input type="text" name="side3" id="side3" placeholder="side 3 here">
-        </div>
+    <div class="container">
+      <h1 class="text-center">Triangle Tracker</h1>
+      <div class="text-center">
+        <form id="triangle-tracker">
+          <div class="form-group">
+            <label for="side1"></label>
+            <input type="text" name="side1" id="side1" placeholder="side 1 here">
+          </div>
+          <div class="form-group">
+            <label for="side2"></label>
+            <input type="text" name="side2" id="side2" placeholder="side 2 here">
+          </div>
+          <div class="form-group">
+            <label for="side3"></label>
+            <input type="text" name="side3" id="side3" placeholder="side 3 here">
+          </div>
 
-        <button type="submit" name="button" class="btn">Submit</button>
-      </form>
+          <button type="submit" name="button" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
 
       <p id="results">This is a <span id="triangle"></span> triangle</p>
-
 
     <script src="js/jquery-1.12.0.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
