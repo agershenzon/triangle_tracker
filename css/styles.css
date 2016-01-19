@@ -1,3 +1,15 @@
 p#results {
   display: none;
 }
+button {
+  margin-top: 20px;
+  background-color: tomato;
+}
+form {
+  margin-top: 40px;
+}
+h1 {
+  margin-top: 40px;
+  font-family: helvetica;
+  text-decoration: underline;
+}

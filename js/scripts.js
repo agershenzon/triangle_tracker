@@ -1,17 +1,15 @@
 function triangleTracker(side1, side2, side3){
   // if value 0 or less alert to enter in value larger than 0
   if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
-    return "please enter a number larger than 0";
-  }
-
-  if ((side1 + side2 <= side3) || (side2 + side3 < side1) || (side3 + side1 < side2)) {
-    return "error";
+    return "not valid, please enter in a value larger than 0";
+  } else if ((side1 + side2 <= side3) || (side2 + side3 < side1) || (side3 + side1 < side2)) {
+    return "non-triangle - please enter in different values!";
   } else if (side1 === side2 && side2 === side3) {
-    return "equilateral";
+    return "equilateral triangle";
   } else if ((side1 === side2) || (side2 === side3) || (side3 === side1)) {
-    return "isoceles";
+    return "isoceles triangle";
   } else if ((side1 !== side2) && (side2 !== side3) && (side3 !== side1)) {
-    return "scalene";
+    return "scalene triangle";
   }
 }
 
@@ -25,7 +23,7 @@ $(document).ready(function(){
     event.preventDefault();
 
     $("p#results").show();
-    $("#triangle").text(results + " triangle.");
+    $("#triangle").text(results);
   });
 
 });
