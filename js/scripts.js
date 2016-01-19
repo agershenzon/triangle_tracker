@@ -1,31 +1,21 @@
 function triangleTracker(side1, side2, side3){
   // if value 0 or less alert to enter in value larger than 0
   if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
-    $("#results").hide();
-    alert('Enter in a value larger than 0');
-    return true;
+    return "please enter a number larger than 0";
   }
-  
-  if ((side1 + side2 <= side3) ||(side2 + side3 < side1) || (side3 + side1 < side2)) {
-    $("#results").hide();
-    alert('not a triangle, try again.');
-    return true;
-  } else if (side1 === side2 && side2 ===side3) {
-    $("#results").show();
-    $("#triangle").text("Equilateral");
-    return true;
-  } else if ((side1 === side2)||(side2 === side3)||(side3 === side1)) {
-    $("#results").show();
-    $("#triangle").text("Isoceles");
-    return true;
-  } else if ((side1 !== side2)&&(side2 !== side3)&&(side3 !== side1)) {
-    $("#results").show();
-    $("#triangle").text("Scalene");
-    return true;
+
+  if ((side1 + side2 <= side3) || (side2 + side3 < side1) || (side3 + side1 < side2)) {
+    return "error";
+  } else if (side1 === side2 && side2 === side3) {
+    return "equilateral";
+  } else if ((side1 === side2) || (side2 === side3) || (side3 === side1)) {
+    return "isoceles";
+  } else if ((side1 !== side2) && (side2 !== side3) && (side3 !== side1)) {
+    return "scalene";
   }
 }
 
-$ (document).ready(function(){
+$(document).ready(function(){
   $("form#triangle-tracker").submit(function(event){
     var side1 = parseInt($("input#side1").val());
     var side2 = parseInt($("input#side2").val());
@@ -33,7 +23,11 @@ $ (document).ready(function(){
     var results = triangleTracker(side1, side2, side3);
 
     event.preventDefault();
+
+    $("p#results").show();
+    $("#triangle").text(results + " triangle.");
   });
+
 });
 
 
